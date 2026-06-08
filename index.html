@@ -1,0 +1,2568 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bestt Coffee - Mari Ngopi, Mari Bicara</title>
+    <!-- Tab Browser Favicon using logo.jpg -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter, Playfair Display, Fredoka -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Fredoka:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome Premium Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              coffee: {
+                50: "#fdfbf7",
+                100: "#f4efe6",
+                200: "#e6dac8",
+                300: "#d2be9f",
+                400: "#bc9c75",
+                500: "#a78153",
+                600: "#8e653e",
+                700: "#6f4e32",
+                800: "#432e21",
+                900: "#2b1c12",
+                950: "#1e120a",
+              },
+              sage: {
+                DEFAULT: "#568c8b",
+                dark: "#436e6d",
+                light: "#72a4a3",
+                pale: "#d6e5e4",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+              brand: ["Fredoka", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e120a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #568c8b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #72a4a3;
+      }
+
+      /* Glassmorphism utility */
+      .glass-panel {
+        background: rgba(43, 28, 18, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(167, 129, 83, 0.15);
+      }
+
+      .glass-card {
+        background: rgba(30, 18, 10, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(167, 129, 83, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(86, 140, 139, 0.5);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Float Animations for Coffee Beans */
+      @keyframes float-slow {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(15deg);
+        }
+      }
+      @keyframes float-medium {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-25px) rotate(-25deg);
+        }
+      }
+      @keyframes float-fast {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-35px) rotate(45deg);
+        }
+      }
+
+      .floating-bean-1 {
+        animation: float-slow 8s ease-in-out infinite;
+      }
+      .floating-bean-2 {
+        animation: float-medium 11s ease-in-out infinite;
+      }
+      .floating-bean-3 {
+        animation: float-fast 14s ease-in-out infinite;
+      }
+
+      /* Custom Sticky Tape Visual Effect */
+      .sticky-tape {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-coffee-950 text-coffee-100 min-h-screen font-sans relative overflow-x-hidden selection:bg-sage selection:text-white"
+  >
+    <!-- Floating Background Coffee Beans -->
+    <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <div
+        class="absolute top-[15%] left-[5%] w-12 h-12 opacity-30 floating-bean-1"
+      >
+        <svg viewBox="0 0 24 24" fill="#a78153" class="w-full h-full">
+          <path
+            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4C14.75,4 17.15,5.64 18.25,8C17.1,7.38 15.77,7 14.33,7C9.18,7 5,11.18 5,16.33C5,17.77 5.38,19.1 6,20.25C3.64,19.15 2,16.75 2,14C2,8.48 6.48,4 12,4Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="absolute top-[28%] right-[8%] w-16 h-16 opacity-25 floating-bean-2"
+      >
+        <svg viewBox="0 0 24 24" fill="#6f4e32" class="w-full h-full">
+          <path
+            d="M12,2C6.5,2 2,6.5 2,12C2,17.5 6.5,22 12,22C17.5,22 22,17.5 22,12C22,6.5 17.5,2 12,2M11.5,18.5C10.1,18.5 9,17.4 9,16C9,14.6 10.1,13.5 11.5,13.5C12.9,13.5 14,14.6 14,16C14,17.4 12.9,18.5 11.5,18.5M12.5,10.5C11.1,10.5 10,9.4 10,8C10,6.6 11.1,5.5 12.5,5.5C13.9,5.5 15,6.6 15,8C15,9.4 13.9,10.5 12.5,10.5Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="absolute top-[45%] left-[80%] w-10 h-10 opacity-20 floating-bean-3"
+      >
+        <svg viewBox="0 0 24 24" fill="#bc9c75" class="w-full h-full">
+          <path
+            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="absolute top-[65%] left-[4%] w-14 h-14 opacity-30 floating-bean-1"
+      >
+        <svg viewBox="0 0 24 24" fill="#a78153" class="w-full h-full">
+          <path
+            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4C14.75,4 17.15,5.64 18.25,8C17.1,7.38 15.77,7 14.33,7C9.18,7 5,11.18 5,16.33C5,17.77 5.38,19.1 6,20.25C3.64,19.15 2,16.75 2,14C2,8.48 6.48,4 12,4Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="absolute top-[82%] right-[12%] w-16 h-16 opacity-25 floating-bean-2"
+      >
+        <svg viewBox="0 0 24 24" fill="#6f4e32" class="w-full h-full">
+          <path
+            d="M12,2C6.5,2 2,6.5 2,12C2,17.5 6.5,22 12,22C17.5,22 22,17.5 22,12C22,6.5 17.5,2 12,2M11.5,18.5C10.1,18.5 9,17.4 9,16C9,14.6 10.1,13.5 11.5,13.5C12.9,13.5 14,14.6 14,16C14,17.4 12.9,18.5 11.5,18.5M12.5,10.5C11.1,10.5 10,9.4 10,8C10,6.6 11.1,5.5 12.5,5.5C13.9,5.5 15,6.6 15,8C15,9.4 13.9,10.5 12.5,10.5Z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav
+      class="sticky top-0 z-50 transition-all duration-300 glass-panel border-b border-coffee-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo with updated logo.jpg -->
+          <div
+            class="flex items-center space-x-3 cursor-pointer"
+            onclick="scrollToSection('hero')"
+          >
+            <img
+              src="logo.jpg"
+              alt="Bestt Coffee Logo"
+              class="h-14 w-14 rounded-full object-cover border-2 border-sage shadow-md transition-transform duration-300 hover:scale-110"
+              onerror="
+                this.src =
+                  'https://placehold.co/150x150/1e120a/568c8b?text=BESTT+COFFEE'
+              "
+            />
+            <div class="flex flex-col">
+              <span
+                class="font-brand text-xl font-bold tracking-wider text-white"
+                >BESTT COFFEE</span
+              >
+              <span
+                class="text-[10px] text-sage font-medium tracking-widest uppercase"
+                >Mari Ngopi, Mari Bicara</span
+              >
+            </div>
+          </div>
+
+          <!-- Nav links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <button
+              onclick="scrollToSection('hero')"
+              class="text-sm font-medium hover:text-sage transition-colors text-coffee-200"
+            >
+              Home
+            </button>
+            <button
+              onclick="scrollToSection('menu')"
+              class="text-sm font-medium hover:text-sage transition-colors text-coffee-200"
+            >
+              Menu
+            </button>
+            <button
+              onclick="scrollToSection('about')"
+              class="text-sm font-medium hover:text-sage transition-colors text-coffee-200"
+            >
+              Keunggulan
+            </button>
+            <button
+              onclick="scrollToSection('testimonials')"
+              class="text-sm font-medium hover:text-sage transition-colors text-coffee-200"
+            >
+              Testimoni
+            </button>
+            <button
+              onclick="scrollToSection('info')"
+              class="text-sm font-medium hover:text-sage transition-colors text-coffee-200"
+            >
+              Lokasi & Kontak
+            </button>
+            <button
+              onclick="openQuiz()"
+              class="text-sm font-semibold text-sage-pale bg-sage/20 hover:bg-sage/40 px-4 py-1.5 rounded-full border border-sage/30 transition-all"
+            >
+              Coffee Quiz ✨
+            </button>
+          </div>
+
+          <!-- Cart Button -->
+          <div class="flex items-center space-x-4">
+            <!-- Cart Button with Counter -->
+            <button
+              onclick="toggleCartDrawer(true)"
+              class="relative p-2.5 rounded-full bg-coffee-900 border border-coffee-800 hover:border-sage transition-all text-coffee-200 hover:text-white flex items-center justify-center"
+            >
+              <i class="fa-solid fa-basket-shopping text-lg"></i>
+              <span
+                id="cart-counter"
+                class="absolute -top-1.5 -right-1.5 bg-sage text-white text-[11px] font-bold h-5 w-5 rounded-full flex items-center justify-center shadow-lg transition-transform scale-0 duration-300"
+                >0</span
+              >
+            </button>
+
+            <!-- Mobile Menu Hamburger -->
+            <button
+              onclick="toggleMobileMenu()"
+              class="md:hidden p-2 rounded-lg text-coffee-200 hover:text-white hover:bg-coffee-900 focus:outline-none"
+            >
+              <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-coffee-950 border-t border-coffee-900 py-4 px-6 space-y-3"
+      >
+        <button
+          onclick="
+            scrollToSection('hero');
+            toggleMobileMenu();
+          "
+          class="block w-full text-left py-2 text-coffee-200 hover:text-sage transition-colors"
+        >
+          Home
+        </button>
+        <button
+          onclick="
+            scrollToSection('menu');
+            toggleMobileMenu();
+          "
+          class="block w-full text-left py-2 text-coffee-200 hover:text-sage transition-colors"
+        >
+          Menu
+        </button>
+        <button
+          onclick="
+            scrollToSection('about');
+            toggleMobileMenu();
+          "
+          class="block w-full text-left py-2 text-coffee-200 hover:text-sage transition-colors"
+        >
+          Keunggulan
+        </button>
+        <button
+          onclick="
+            scrollToSection('testimonials');
+            toggleMobileMenu();
+          "
+          class="block w-full text-left py-2 text-coffee-200 hover:text-sage transition-colors"
+        >
+          Testimoni
+        </button>
+        <button
+          onclick="
+            scrollToSection('info');
+            toggleMobileMenu();
+          "
+          class="block w-full text-left py-2 text-coffee-200 hover:text-sage transition-colors"
+        >
+          Lokasi & Kontak
+        </button>
+        <button
+          onclick="
+            openQuiz();
+            toggleMobileMenu();
+          "
+          class="block w-full text-center py-2.5 bg-sage text-white rounded-lg font-medium shadow-md"
+        >
+          Ikuti Coffee Quiz ✨
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative pt-8 pb-16 md:py-24 overflow-hidden z-10"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Content: Dynamic Copy in Indonesian -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div
+              class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-sage/15 border border-sage/20 text-sage-pale text-xs font-semibold tracking-wide"
+            >
+              <i class="fa-solid fa-medal text-sage"></i>
+              <span>KEDAI KOPI PREMIUM MATARAM</span>
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white leading-tight"
+            >
+              Cita Rasa Kopi
+              <span class="text-sage italic font-normal">Sempurna</span> di
+              Setiap Obrolan
+            </h1>
+
+            <p
+              class="text-coffee-300 text-sm sm:text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light"
+            >
+              Bagi kami, kopi bukan sekadar minuman biasa, melainkan media
+              penghubung cerita. Kami mengundang Anda menikmati cita rasa sejati
+              biji kopi pilihan langsung dari Mataram, Lombok.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4"
+            >
+              <button
+                onclick="scrollToSection('menu')"
+                class="px-8 py-4 rounded-xl bg-sage hover:bg-sage-dark text-white font-semibold shadow-lg hover:shadow-sage/20 transform hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2"
+              >
+                <span>Pesan Kopi Sekarang</span>
+                <i class="fa-solid fa-mug-hot"></i>
+              </button>
+              <button
+                onclick="openQuiz()"
+                class="px-8 py-4 rounded-xl bg-coffee-900 hover:bg-coffee-850 text-coffee-200 hover:text-white font-semibold border border-coffee-800 hover:border-sage transform hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2"
+              >
+                <i class="fa-solid fa-clipboard-question text-sage"></i>
+                <span>Cari Kopi Pilihanmu</span>
+              </button>
+            </div>
+
+            <!-- Small Brand Highlights -->
+            <div
+              class="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-coffee-900 max-w-lg mx-auto lg:mx-0 text-left"
+            >
+              <div>
+                <span
+                  class="block text-2xl sm:text-3xl font-serif font-bold text-white"
+                  >100%</span
+                >
+                <span class="text-xs text-coffee-400">Biji Kopi Pilihan</span>
+              </div>
+              <div>
+                <span
+                  class="block text-2xl sm:text-3xl font-serif font-bold text-white"
+                  >Rp 12k+</span
+                >
+                <span class="text-xs text-coffee-400">Harga Ramah</span>
+              </div>
+              <div>
+                <span
+                  class="block text-2xl sm:text-3xl font-serif font-bold text-white"
+                  >Lombok</span
+                >
+                <span class="text-xs text-coffee-400">Mataram NTB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content: Showcase Hero Display Card -->
+          <div class="lg:col-span-5 relative flex justify-center items-center">
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-sage/10 to-transparent rounded-full blur-3xl -z-10"
+            ></div>
+
+            <div
+              class="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl overflow-visible flex items-center justify-center"
+            >
+              <div
+                class="absolute -top-6 -right-6 w-32 h-32 opacity-30 pointer-events-none select-none animate-pulse"
+              >
+                <svg viewBox="0 0 200 200" fill="#a78153" class="w-full h-full">
+                  <path
+                    d="M43,-60.7C55,-54.2,63.4,-40.7,71.2,-25.9C79,-11.1,86.2,5.1,82.8,19C79.4,32.8,65.3,44.2,51.8,54.7C38.3,65.2,25.4,74.9,9.4,79C-6.5,83.1,-25.6,81.6,-40.7,73.1C-55.8,64.7,-67,49.2,-74,32.2C-81,15.2,-83.8,-3.3,-79,-20.3C-74.1,-37.2,-61.5,-52.6,-46.5,-58.5C-31.5,-64.4,-14.2,-60.7,1.8,-63.5C17.9,-66.2,31,-67.2,43,-60.7Z"
+                    transform="translate(100 100)"
+                  />
+                </svg>
+              </div>
+
+              <!-- Main Cup Display Card with Logo -->
+              <div
+                class="relative w-64 h-80 rounded-2xl glass-panel p-6 border border-coffee-800 shadow-2xl flex flex-col justify-between items-center group transition-all duration-500 hover:border-sage/40"
+              >
+                <div
+                  class="w-full flex justify-between items-center border-b border-coffee-800/60 pb-3"
+                >
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="logo.jpg"
+                      class="w-8 h-8 rounded-full border border-sage/40"
+                      onerror="
+                        this.src =
+                          'https://placehold.co/150x150/1e120a/568c8b?text=BESTT'
+                      "
+                    />
+                    <span
+                      class="text-[11px] font-bold text-white tracking-wider uppercase font-brand"
+                      >Bestt Coffee</span
+                    >
+                  </div>
+                  <span
+                    class="text-[9px] bg-sage/20 text-sage-pale px-2.5 py-0.5 rounded font-mono"
+                    >MATARAM</span
+                  >
+                </div>
+
+                <div
+                  class="relative w-36 h-36 flex items-center justify-center my-4 transform transition-transform group-hover:scale-105 duration-300"
+                >
+                  <img
+                    src="latte.jpg"
+                    alt="Bestt Coffee Latte"
+                    class="w-28 h-28 object-cover rounded-xl border border-coffee-700/60"
+                    onerror="
+                      this.className = 'hidden';
+                      document
+                        .getElementById('placeholder-cup')
+                        .classList.remove('hidden');
+                    "
+                  />
+                  <div
+                    id="placeholder-cup"
+                    class="hidden w-20 h-28 bg-gradient-to-b from-coffee-800 to-coffee-950 rounded-b-xl rounded-t-sm shadow-xl relative border-t-4 border-coffee-300 flex flex-col items-center justify-between py-4"
+                  >
+                    <div
+                      class="absolute -top-1.5 w-[104%] h-2.5 bg-coffee-900 rounded-t-md shadow-md"
+                    ></div>
+                    <span
+                      class="text-[8px] font-brand tracking-widest text-coffee-400"
+                      >COFFEE</span
+                    >
+                  </div>
+                </div>
+
+                <button
+                  onclick="scrollToSection('menu')"
+                  class="w-full py-2.5 rounded-xl bg-sage hover:bg-sage-dark text-white text-xs font-semibold tracking-wider transition-all uppercase active:scale-95"
+                >
+                  Jelajahi Menu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section (Americano, Caffè Latte, Cappuccino) -->
+    <section
+      id="menu"
+      class="py-20 relative z-10 bg-coffee-900/40 border-y border-coffee-900"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span
+            class="text-xs font-semibold uppercase tracking-widest text-sage"
+            >PILIHAN MENU TERBAIK</span
+          >
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">
+            Daftar Kopi Bestt Coffee
+          </h2>
+          <div class="h-1 w-12 bg-sage mx-auto mt-4 rounded-full"></div>
+          <p class="text-coffee-300 text-sm mt-3">
+            Nikmati racikan menu kopi istimewa langsung dari pemesanan Take Away
+            atau Delivery ke tempat Anda.
+          </p>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Product 1: Americano -->
+          <div
+            class="glass-card rounded-3xl p-6 flex flex-col justify-between items-center text-center relative group"
+          >
+            <div
+              class="absolute top-4 right-4 bg-coffee-900/80 px-2.5 py-1 rounded-lg border border-coffee-800 text-[11px] font-semibold text-amber-400 flex items-center space-x-1"
+            >
+              <span>4.8</span> <i class="fa-solid fa-star text-[9px]"></i>
+            </div>
+
+            <!-- Image container -->
+            <div
+              class="w-40 h-40 bg-coffee-950/60 rounded-2xl overflow-hidden flex items-center justify-center mb-6 border border-coffee-800/60 group-hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="americano.jpg"
+                alt="Americano Bestt Coffee"
+                class="w-full h-full object-cover"
+                onerror="
+                  this.src =
+                    'https://placehold.co/300x300/2b1c12/568c8b?text=Americano'
+                "
+              />
+            </div>
+
+            <div class="space-y-2 mb-6">
+              <h3 class="text-xl font-bold text-white font-serif">Americano</h3>
+              <p class="text-xs text-coffee-300 max-w-[220px]">
+                Espresso murni aromatik yang diencerkan dengan air panas,
+                menyajikan rasa kopi klasik yang bersih dan tegas.
+              </p>
+              <div class="flex items-center justify-center gap-2 pt-2">
+                <span
+                  class="text-[10px] bg-coffee-800 text-coffee-200 px-2.5 py-1 rounded-full"
+                  >Take Away: <b class="text-white">12rb</b></span
+                >
+                <span
+                  class="text-[10px] bg-sage/20 text-sage-pale px-2.5 py-1 rounded-full"
+                  >Delivery: <b class="text-white">15rb</b></span
+                >
+              </div>
+            </div>
+
+            <div
+              class="w-full flex items-center justify-between border-t border-coffee-800/60 pt-4 mt-auto"
+            >
+              <div class="text-left">
+                <span
+                  class="text-[9px] text-coffee-400 block uppercase tracking-wider font-semibold"
+                  >Mulai Dari</span
+                >
+                <span class="text-lg font-mono font-bold text-white"
+                  >Rp 12.000</span
+                >
+              </div>
+              <button
+                onclick="openCustomizeModal('Americano', 12000, 15000)"
+                class="w-11 h-11 bg-sage hover:bg-sage-dark text-white rounded-full flex items-center justify-center shadow-lg transform active:scale-90 transition-all"
+              >
+                <i class="fa-solid fa-plus text-sm"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 2: Caffè Latte -->
+          <div
+            class="glass-card rounded-3xl p-6 flex flex-col justify-between items-center text-center relative group border-sage/20"
+          >
+            <div
+              class="absolute top-4 right-4 bg-coffee-900/80 px-2.5 py-1 rounded-lg border border-coffee-800 text-[11px] font-semibold text-amber-400 flex items-center space-x-1"
+            >
+              <span>5.0</span> <i class="fa-solid fa-star text-[9px]"></i>
+            </div>
+
+            <div
+              class="w-40 h-40 bg-coffee-950/60 rounded-2xl overflow-hidden flex items-center justify-center mb-6 border border-coffee-800/60 group-hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="latte.jpg"
+                alt="Caffè Latte Bestt Coffee"
+                class="w-full h-full object-cover"
+                onerror="
+                  this.src =
+                    'https://placehold.co/300x300/2b1c12/568c8b?text=Caffè+Latte'
+                "
+              />
+            </div>
+
+            <div class="space-y-2 mb-6">
+              <h3 class="text-xl font-bold text-white font-serif">
+                Caffè Latte
+              </h3>
+              <p class="text-xs text-coffee-300 max-w-[220px]">
+                Keseimbangan rasa sempurna antara espresso kental premium dan
+                kelembutan susu segar hangat.
+              </p>
+              <div class="flex items-center justify-center gap-2 pt-2">
+                <span
+                  class="text-[10px] bg-coffee-800 text-coffee-200 px-2.5 py-1 rounded-full"
+                  >Take Away: <b class="text-white">15rb</b></span
+                >
+                <span
+                  class="text-[10px] bg-sage/20 text-sage-pale px-2.5 py-1 rounded-full"
+                  >Delivery: <b class="text-white">18rb</b></span
+                >
+              </div>
+            </div>
+
+            <div
+              class="w-full flex items-center justify-between border-t border-coffee-800/60 pt-4 mt-auto"
+            >
+              <div class="text-left">
+                <span
+                  class="text-[9px] text-coffee-400 block uppercase tracking-wider font-semibold"
+                  >Mulai Dari</span
+                >
+                <span class="text-lg font-mono font-bold text-white"
+                  >Rp 15.000</span
+                >
+              </div>
+              <button
+                onclick="openCustomizeModal('Caffè Latte', 15000, 18000)"
+                class="w-11 h-11 bg-sage hover:bg-sage-dark text-white rounded-full flex items-center justify-center shadow-lg transform active:scale-90 transition-all"
+              >
+                <i class="fa-solid fa-plus text-sm"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3: Cappuccino -->
+          <div
+            class="glass-card rounded-3xl p-6 flex flex-col justify-between items-center text-center relative group"
+          >
+            <div
+              class="absolute top-4 right-4 bg-coffee-900/80 px-2.5 py-1 rounded-lg border border-coffee-800 text-[11px] font-semibold text-amber-400 flex items-center space-x-1"
+            >
+              <span>4.9</span> <i class="fa-solid fa-star text-[9px]"></i>
+            </div>
+
+            <div
+              class="w-40 h-40 bg-coffee-950/60 rounded-2xl overflow-hidden flex items-center justify-center mb-6 border border-coffee-800/60 group-hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="cappucino.jpg"
+                alt="Cappuccino Bestt Coffee"
+                class="w-full h-full object-cover"
+                onerror="
+                  this.src =
+                    'https://placehold.co/300x300/2b1c12/568c8b?text=Cappuccino'
+                "
+              />
+            </div>
+
+            <div class="space-y-2 mb-6">
+              <h3 class="text-xl font-bold text-white font-serif">
+                Cappuccino
+              </h3>
+              <p class="text-xs text-coffee-300 max-w-[220px]">
+                Perpaduan klasik legendaris antara espresso mantap, susu hangat,
+                dan foam tebal nan lembut di atasnya.
+              </p>
+              <div class="flex items-center justify-center gap-2 pt-2">
+                <span
+                  class="text-[10px] bg-coffee-800 text-coffee-200 px-2.5 py-1 rounded-full"
+                  >Take Away: <b class="text-white">15rb</b></span
+                >
+                <span
+                  class="text-[10px] bg-sage/20 text-sage-pale px-2.5 py-1 rounded-full"
+                  >Delivery: <b class="text-white">18rb</b></span
+                >
+              </div>
+            </div>
+
+            <div
+              class="w-full flex items-center justify-between border-t border-coffee-800/60 pt-4 mt-auto"
+            >
+              <div class="text-left">
+                <span
+                  class="text-[9px] text-coffee-400 block uppercase tracking-wider font-semibold"
+                  >Mulai Dari</span
+                >
+                <span class="text-lg font-mono font-bold text-white"
+                  >Rp 15.000</span
+                >
+              </div>
+              <button
+                onclick="openCustomizeModal('Cappuccino', 15000, 18000)"
+                class="w-11 h-11 bg-sage hover:bg-sage-dark text-white rounded-full flex items-center justify-center shadow-lg transform active:scale-90 transition-all"
+              >
+                <i class="fa-solid fa-plus text-sm"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section id="about" class="py-20 relative z-10 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span
+            class="text-xs font-semibold uppercase tracking-widest text-sage"
+            >KOMITMEN RASA KAMI</span
+          >
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">
+            Kenapa Harus Bestt Coffee?
+          </h2>
+          <div class="h-1 w-12 bg-sage mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Cards -->
+          <div class="lg:col-span-4 space-y-8">
+            <!-- Value 1 -->
+            <div class="glass-card rounded-2xl p-6 text-right relative group">
+              <div
+                class="absolute -top-6 -right-4 font-serif text-7xl font-bold text-coffee-800/30 group-hover:text-sage/20 transition-colors select-none"
+              >
+                1
+              </div>
+              <div class="flex items-center justify-end space-x-3 mb-3">
+                <h3 class="text-lg font-bold text-white font-serif">
+                  Biji Kopi Asli Premium
+                </h3>
+                <div
+                  class="w-10 h-10 bg-sage/10 text-sage rounded-xl flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+              </div>
+              <p class="text-xs text-coffee-300 leading-relaxed">
+                Biji kopi pilihan berkualitas terbaik dipanggang sempurna guna
+                mempertahankan keunikan rasa khas Bestt Coffee.
+              </p>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="glass-card rounded-2xl p-6 text-right relative group">
+              <div
+                class="absolute -top-6 -right-4 font-serif text-7xl font-bold text-coffee-800/30 group-hover:text-sage/20 transition-colors select-none"
+              >
+                2
+              </div>
+              <div class="flex items-center justify-end space-x-3 mb-3">
+                <h3 class="text-lg font-bold text-white font-serif">
+                  Kualitas Higienis Terjaga
+                </h3>
+                <div
+                  class="w-10 h-10 bg-sage/10 text-sage rounded-xl flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+              </div>
+              <p class="text-xs text-coffee-300 leading-relaxed">
+                Proses pengemasan dan penyajian yang bersih, ramah lingkungan,
+                baik untuk pesanan Take Away maupun Delivery.
+              </p>
+            </div>
+          </div>
+
+          <!-- Center Cup representation with logo.jpg -->
+          <div
+            class="lg:col-span-4 flex flex-col items-center justify-center py-6"
+          >
+            <div
+              class="relative w-64 h-96 flex flex-col justify-between items-center bg-gradient-to-b from-coffee-900/60 to-coffee-950/20 rounded-full border border-coffee-800/30 p-8 shadow-2xl"
+            >
+              <div class="text-center">
+                <span
+                  class="text-xs text-sage uppercase tracking-widest font-semibold block"
+                  >BRAND EXCELLENCE</span
+                >
+                <span
+                  class="text-lg font-brand text-white font-bold tracking-widest uppercase"
+                  >BESTT COFFEE</span
+                >
+              </div>
+
+              <div
+                class="relative w-40 h-40 flex items-center justify-center my-4"
+              >
+                <img
+                  src="logo.jpg"
+                  alt="Bestt Coffee Logo"
+                  class="w-32 h-32 rounded-full object-cover border-4 border-sage/60 p-1 shadow-2xl"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/150x150/2b1c12/568c8b?text=BESTT'
+                  "
+                />
+              </div>
+
+              <button
+                onclick="scrollToSection('menu')"
+                class="px-6 py-2.5 rounded-full bg-sage hover:bg-sage-dark text-white text-xs font-semibold shadow-lg transition-all transform hover:scale-105"
+              >
+                Pesan Kopi Sekarang
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Cards -->
+          <div class="lg:col-span-4 space-y-8">
+            <!-- Value 3 -->
+            <div class="glass-card rounded-2xl p-6 text-left relative group">
+              <div
+                class="absolute -top-6 -left-4 font-serif text-7xl font-bold text-coffee-800/30 group-hover:text-sage/20 transition-colors select-none"
+              >
+                3
+              </div>
+              <div class="flex items-center justify-start space-x-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-sage/10 text-sage rounded-xl flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white font-serif">
+                  Kustomisasi Sesuai Selera
+                </h3>
+              </div>
+              <p class="text-xs text-coffee-300 leading-relaxed">
+                Anda bebas menentukan level gula, suhu minuman (panas/dingin),
+                serta tambahan Oat Milk istimewa.
+              </p>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="glass-card rounded-2xl p-6 text-left relative group">
+              <div
+                class="absolute -top-6 -left-4 font-serif text-7xl font-bold text-coffee-800/30 group-hover:text-sage/20 transition-colors select-none"
+              >
+                4
+              </div>
+              <div class="flex items-center justify-start space-x-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-sage/10 text-sage rounded-xl flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white font-serif">
+                  Pengiriman Cepat
+                </h3>
+              </div>
+              <p class="text-xs text-coffee-300 leading-relaxed">
+                Layanan kurir andal siap mengantarkan pesanan kopi Delivery Anda
+                selagi masih segar dan nikmat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Testimonial Sticky Notes Section -->
+    <section
+      id="testimonials"
+      class="py-20 relative z-10 bg-gradient-to-b from-coffee-950 to-coffee-900 border-t border-coffee-900"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12"
+        >
+          <div class="text-left max-w-2xl">
+            <span
+              class="text-xs font-semibold uppercase tracking-widest text-sage"
+              >TESTIMONI PELANGGAN</span
+            >
+            <h2
+              class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1"
+            >
+              Apa Kata Teman Ngopi Kami?
+            </h2>
+            <div class="h-1 w-12 bg-sage mt-4 rounded-full"></div>
+          </div>
+          <div class="mt-6 md:mt-0">
+            <button
+              onclick="openAddTestimonialModal()"
+              class="px-6 py-3.5 bg-sage hover:bg-sage-dark text-white rounded-xl font-semibold text-xs transition-all flex items-center space-x-2 shadow-lg active:scale-95"
+            >
+              <i class="fa-solid fa-note-sticky text-sm"></i>
+              <span>+ Tempel Testimoni Baru</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pinboard Sticky Notes Grid -->
+        <div
+          id="sticky-notes-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-4"
+        >
+          <!-- Injected Dynamically via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Section Banner -->
+    <section
+      class="py-12 relative z-10 bg-gradient-to-r from-coffee-900 to-coffee-950 border-t border-coffee-900"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-sage/20 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div
+            class="absolute right-0 bottom-0 top-0 w-1/3 bg-radial-gradient from-sage/10 to-transparent pointer-events-none"
+          ></div>
+
+          <div class="space-y-4 text-center md:text-left md:max-w-xl">
+            <span
+              class="text-xs font-semibold text-sage uppercase tracking-wider"
+              >KUIS KOPI INTERAKTIF</span
+            >
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white">
+              Temukan Kopi Terbaik yang Sesuai dengan Mood Hari Ini
+            </h3>
+            <p class="text-xs sm:text-sm text-coffee-300">
+              Gunakan algoritma kuis instan kami untuk mencocokkan selera Anda
+              dengan salah satu menu andalan Bestt Coffee.
+            </p>
+          </div>
+
+          <div class="flex-shrink-0">
+            <button
+              onclick="openQuiz()"
+              class="px-8 py-4 rounded-full bg-sage hover:bg-sage-dark text-white font-semibold shadow-lg hover:shadow-sage/20 transform hover:-translate-y-0.5 transition-all flex items-center space-x-2"
+            >
+              <span>Mulai Kuis Sekarang</span>
+              <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info & Location Section (Jl. Gili Trawangan Mataram) -->
+    <section
+      id="info"
+      class="py-20 bg-coffee-950 border-t border-coffee-900 relative z-10"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Info Text -->
+          <div class="lg:col-span-5 space-y-6">
+            <span
+              class="text-xs font-semibold text-sage tracking-wider uppercase block"
+              >LOKASI & KONTAK KAMI</span
+            >
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">
+              Kunjungi Kami di Mataram Lombok
+            </h2>
+            <div class="h-1 w-12 bg-sage rounded-full"></div>
+            <p
+              class="text-xs sm:text-sm text-coffee-300 leading-relaxed font-light"
+            >
+              Atmosfer hangat, interior estetik, dan obrolan berharga menanti
+              Anda di kedai kami. Kami menyajikan hidangan dine-in segar, opsi
+              take away cepat, serta sistem pesan antar (delivery) langsung ke
+              wilayah Mataram.
+            </p>
+
+            <div class="space-y-4 pt-4 text-xs sm:text-sm">
+              <div class="flex items-start space-x-3.5">
+                <div
+                  class="w-10 h-10 rounded-full bg-sage/10 text-sage flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="font-bold text-white block">Alamat Toko</span>
+                  <span class="text-coffee-300"
+                    >Jl. Gili Trawangan 2 No. 23, Taman Karang Baru, Mataram,
+                    NTB</span
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3.5">
+                <div
+                  class="w-10 h-10 rounded-full bg-sage/10 text-sage flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <span class="font-bold text-white block"
+                    >WhatsApp Pemesanan</span
+                  >
+                  <span class="text-coffee-300">+62 878-6564-8996</span>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3.5">
+                <div
+                  class="w-10 h-10 rounded-full bg-sage/10 text-sage flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                  <span class="font-bold text-white block"
+                    >Jam Operasional</span
+                  >
+                  <span class="text-coffee-300"
+                    >Setiap Hari: 08:00 - 23:00 WITA</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Visual Map Panel with styled Google Maps -->
+          <div class="lg:col-span-7">
+            <div
+              class="glass-panel p-3 rounded-3xl border border-coffee-800 shadow-2xl relative overflow-hidden h-96 sm:h-[420px] flex flex-col justify-between"
+            >
+              <!-- Map Wrapper with Dark Filter for beautiful seamless visual -->
+              <div class="absolute inset-0 w-full h-full z-0">
+                <iframe
+                  src="https://maps.google.com/maps?q=C4G4%2BGM%20Karang%20Baru,%20Kota%20Mataram,%20Nusa%20Tenggara%20Bar.&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  class="w-full h-full border-0 opacity-70 hover:opacity-90 transition-opacity duration-300"
+                  style="
+                    filter: grayscale(100%) invert(90%) hue-rotate(15deg)
+                      contrast(115%);
+                  "
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+
+              <!-- Info Overlay Box inside the Map -->
+              <div
+                class="relative z-10 mt-auto bg-coffee-950/90 backdrop-blur-md p-5 rounded-2xl border border-coffee-800/80 m-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl"
+              >
+                <div class="space-y-1 text-left">
+                  <div class="flex items-center space-x-1.5 text-sage">
+                    <i class="fa-solid fa-map-pin text-xs"></i>
+                    <span
+                      class="text-[10px] font-bold tracking-widest uppercase"
+                      >Plus Code Terverifikasi</span
+                    >
+                  </div>
+                  <h4 class="text-sm font-bold text-white font-serif">
+                    C4G4+GM Karang Baru, Mataram
+                  </h4>
+                  <p class="text-[11px] text-coffee-300 leading-relaxed">
+                    Jl. Gili Trawangan 2 No. 23, Karang Baru, Kota Mataram
+                  </p>
+                </div>
+
+                <div class="flex flex-row gap-2 shrink-0">
+                  <a
+                    href="https://maps.google.com/?q=C4G4%2BGM+Karang+Baru,+Kota+Mataram"
+                    target="_blank"
+                    class="px-4 py-2.5 bg-sage hover:bg-sage-dark text-white rounded-xl font-semibold text-xs text-center flex items-center justify-center space-x-1.5 transition-colors shadow-md"
+                  >
+                    <i class="fa-solid fa-location-arrow"></i>
+                    <span>Petunjuk Arah</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-coffee-950 border-t border-coffee-900 py-12 relative z-10 text-xs text-coffee-400"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <!-- Col 1: Brand -->
+          <div class="space-y-4 text-left">
+            <div class="flex items-center space-x-3">
+              <img
+                src="logo.jpg"
+                class="w-10 h-10 rounded-full border border-sage"
+                onerror="
+                  this.src =
+                    'https://placehold.co/150x150/2b1c12/568c8b?text=BESTT'
+                "
+              />
+              <span
+                class="font-brand text-lg font-bold text-white tracking-wider"
+                >BESTT COFFEE</span
+              >
+            </div>
+            <p class="text-xs text-coffee-300 leading-relaxed">
+              "Mari Ngopi, Mari Bicara" - Menghadirkan kenikmatan kopi terbaik
+              bagi momen percakapan berharga Anda di Mataram, Lombok.
+            </p>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div class="space-y-3 text-left">
+            <span
+              class="text-xs font-bold text-white uppercase tracking-wider block"
+              >Pintasan</span
+            >
+            <ul class="space-y-2">
+              <li>
+                <a href="#hero" class="hover:text-sage transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#menu" class="hover:text-sage transition-colors"
+                  >Menu Pilihan</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-sage transition-colors"
+                  >Keunggulan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="hover:text-sage transition-colors"
+                  >Testimoni</a
+                >
+              </li>
+              <li>
+                <a href="#info" class="hover:text-sage transition-colors"
+                  >Lokasi & Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Jam Kerja -->
+          <div class="space-y-3 text-left">
+            <span
+              class="text-xs font-bold text-white uppercase tracking-wider block"
+              >Jam Operasional</span
+            >
+            <ul class="space-y-2 text-coffee-300">
+              <li>Senin - Minggu: 08:00 - 23:00 WITA</li>
+              <li class="text-sage font-semibold">
+                Tersedia Take Away & Delivery
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact -->
+          <div class="space-y-3 text-left">
+            <span
+              class="text-xs font-bold text-white uppercase tracking-wider block"
+              >Kontak Utama</span
+            >
+            <ul class="space-y-2 text-coffee-300">
+              <li>
+                <i class="fa-solid fa-location-dot text-sage mr-2"></i> Jl. Gili
+                Trawangan 2 No. 23, Taman Karang Baru, Mataram, NTB
+              </li>
+              <li>
+                <i class="fa-solid fa-phone text-sage mr-2"></i> +62
+                878-6564-8996
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope text-sage mr-2"></i>
+                info@besttcoffee.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Note -->
+        <div
+          class="border-t border-coffee-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+        >
+          <p>
+            &copy; 2026 Bestt Coffee. Semua Hak Dilindungi. Desain Terintegrasi.
+          </p>
+          <div class="flex space-x-4 text-lg">
+            <a
+              href="https://wa.me/6287865648996"
+              target="_blank"
+              class="text-coffee-400 hover:text-white transition-colors"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a
+              href="#"
+              class="text-coffee-400 hover:text-white transition-colors"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="text-coffee-400 hover:text-white transition-colors"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- INTERACTIVE COMPONENTS / MODALS -->
+
+    <!-- Cart Drawer (Floating on right side) -->
+    <div
+      id="cart-drawer"
+      class="fixed inset-y-0 right-0 w-full max-w-md bg-coffee-950 border-l border-coffee-800/80 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col"
+    >
+      <!-- Drawer Header -->
+      <div
+        class="p-6 border-b border-coffee-900 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-basket-shopping text-sage text-lg"></i>
+          <h3 class="text-lg font-bold text-white font-serif">
+            Keranjang Belanja
+          </h3>
+        </div>
+        <button
+          onclick="toggleCartDrawer(false)"
+          class="p-1 rounded-full hover:bg-coffee-900 text-coffee-400 hover:text-white"
+        >
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Body -->
+      <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <!-- Empty state -->
+        <div
+          id="cart-empty-state"
+          class="flex flex-col items-center justify-center h-full text-center space-y-4 py-12"
+        >
+          <div
+            class="w-16 h-16 bg-coffee-900 rounded-full flex items-center justify-center text-coffee-400 text-2xl"
+          >
+            <i class="fa-solid fa-coffee"></i>
+          </div>
+          <div class="space-y-1">
+            <p class="text-white font-semibold">Keranjang Kamu Kosong</p>
+            <p class="text-xs text-coffee-400">
+              Pilihlah salah satu kopi favorit Anda dari daftar menu!
+            </p>
+          </div>
+          <button
+            onclick="
+              toggleCartDrawer(false);
+              scrollToSection('menu');
+            "
+            class="px-5 py-2 rounded-full bg-sage text-white text-xs font-semibold hover:bg-sage-dark"
+          >
+            Pilih Menu
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer Footer: Total & Actions -->
+      <div
+        id="cart-footer"
+        class="p-6 border-t border-coffee-900 space-y-4 bg-coffee-950/90 hidden"
+      >
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-coffee-300">Subtotal</span>
+          <span
+            id="cart-total-price"
+            class="text-lg font-bold font-mono text-white"
+            >Rp 0</span
+          >
+        </div>
+
+        <div class="space-y-2">
+          <!-- Order on WhatsApp Button with Direct Invoice -->
+          <button
+            onclick="triggerCheckout()"
+            class="w-full py-3.5 rounded-xl bg-sage hover:bg-sage-dark text-white font-semibold flex items-center justify-center space-x-2 shadow-lg transition-colors"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Kirim Invoice ke WhatsApp</span>
+          </button>
+          <p class="text-[10px] text-center text-coffee-400">
+            Sistem otomatis menyusun invoice pesanan Anda untuk segera diproses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customize Product Modal -->
+    <div
+      id="customize-modal"
+      class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden"
+    >
+      <div
+        class="bg-coffee-950 rounded-3xl max-w-md w-full border border-coffee-800 shadow-2xl overflow-hidden relative transform scale-95 opacity-0 transition-all duration-300"
+      >
+        <!-- Modal Header -->
+        <div
+          class="p-6 border-b border-coffee-900 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-[10px] text-sage font-mono tracking-widest uppercase block"
+              >Kustomisasi Minuman</span
+            >
+            <h3
+              id="customize-title"
+              class="text-xl font-bold text-white font-serif mt-1"
+            >
+              Cappuccino
+            </h3>
+          </div>
+          <button
+            onclick="closeCustomizeModal()"
+            class="p-1 rounded-full hover:bg-coffee-900 text-coffee-400 hover:text-white"
+          >
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <!-- Modal Body options -->
+        <div class="p-6 space-y-5 text-left">
+          <!-- Option 1: Serving Method (Take Away / Delivery) -->
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-white block"
+              >Metode Penyajian</span
+            >
+            <div class="grid grid-cols-2 gap-3">
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="order-method"
+                  value="Take Away"
+                  checked
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2.5 rounded-xl border border-coffee-800 bg-coffee-900/40 text-xs text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  <i class="fa-solid fa-bag-shopping mr-1.5 text-amber-500"></i>
+                  Take Away
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="order-method"
+                  value="Delivery"
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2.5 rounded-xl border border-coffee-800 bg-coffee-900/40 text-xs text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  <i class="fa-solid fa-truck-fast mr-1.5 text-sage"></i>
+                  Delivery (Antar)
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Option 2: Temp (Hot / Ice) -->
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-white block"
+              >Suhu Penyajian</span
+            >
+            <div class="grid grid-cols-2 gap-3">
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="serving-temp"
+                  value="Ice"
+                  checked
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2.5 rounded-xl border border-coffee-800 bg-coffee-900/40 text-xs text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  <i class="fa-solid fa-snowflake text-sky-400 mr-1.5"></i>
+                  Dingin (Ice)
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="serving-temp"
+                  value="Hot"
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2.5 rounded-xl border border-coffee-800 bg-coffee-900/40 text-xs text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  <i class="fa-solid fa-fire text-red-500 mr-1.5"></i> Panas
+                  (Hot)
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Option 3: Sweetness -->
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-white block"
+              >Tingkat Kemanisan</span
+            >
+            <div class="grid grid-cols-3 gap-2">
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="sugar-level"
+                  value="Less Sugar"
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2 rounded-lg border border-coffee-800 bg-coffee-900/40 text-[11px] text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  Less Sugar
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="sugar-level"
+                  value="Normal Sweet"
+                  checked
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2 rounded-lg border border-coffee-800 bg-coffee-900/40 text-[11px] text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  Normal
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="sugar-level"
+                  value="Extra Sweet"
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2 rounded-lg border border-coffee-800 bg-coffee-900/40 text-[11px] text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  Extra Sweet
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Option 4: Oat Milk -->
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-white block">Pilihan Susu</span>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="milk-type"
+                  value="Fresh Milk"
+                  checked
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2.5 rounded-xl border border-coffee-800 bg-coffee-900/40 text-xs text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  Fresh Milk
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="milk-type"
+                  value="Oat Milk"
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2.5 rounded-xl border border-coffee-800 bg-coffee-900/40 text-xs text-coffee-300 peer-checked:border-sage peer-checked:bg-sage/10 peer-checked:text-white transition-all"
+                >
+                  Oat Milk (+Rp 5.000)
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer with price & action -->
+        <div
+          class="p-6 border-t border-coffee-900 flex items-center justify-between bg-coffee-950/90"
+        >
+          <div class="text-left">
+            <span class="text-[10px] text-coffee-400 block">Total Item</span>
+            <span
+              id="customize-total"
+              class="text-base font-bold font-mono text-white"
+              >Rp 0</span
+            >
+          </div>
+          <button
+            id="add-to-cart-confirm"
+            class="px-6 py-3 rounded-xl bg-sage hover:bg-sage-dark text-white font-semibold text-xs transition-colors flex items-center space-x-2"
+          >
+            <i class="fa-solid fa-cart-plus"></i>
+            <span>Masukkan Keranjang</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee Quiz Modal -->
+    <div
+      id="quiz-modal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden"
+    >
+      <div
+        class="bg-coffee-950 rounded-3xl max-w-lg w-full border border-coffee-800 shadow-2xl overflow-hidden relative transform scale-95 opacity-0 transition-all duration-300"
+      >
+        <!-- Close Button -->
+        <button
+          onclick="closeQuiz()"
+          class="absolute top-4 right-4 p-2 rounded-full hover:bg-coffee-900 text-coffee-400 hover:text-white z-10"
+        >
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+        <!-- Quiz Screens Container -->
+        <div class="p-8">
+          <!-- Welcome Screen -->
+          <div id="quiz-welcome" class="text-center space-y-6 py-4">
+            <div
+              class="w-20 h-20 bg-sage/15 rounded-full flex items-center justify-center text-sage text-3xl mx-auto"
+            >
+              <i class="fa-solid fa-mug-saucer animate-bounce"></i>
+            </div>
+            <div class="space-y-2">
+              <span
+                class="text-xs text-sage font-mono tracking-widest uppercase block"
+                >Bestt Coffee Matcher</span
+              >
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white">
+                Temukan Pasangan Kopimu
+              </h3>
+              <p class="text-xs sm:text-sm text-coffee-300 max-w-sm mx-auto">
+                Kami merekomendasikan kopi paling pas dengan selera Anda hanya
+                dalam 3 pertanyaan cepat!
+              </p>
+            </div>
+            <button
+              onclick="startQuiz()"
+              class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-sage hover:bg-sage-dark text-white font-semibold shadow-lg transition-all"
+            >
+              Mulai Kuis Kopi ☕
+            </button>
+          </div>
+
+          <!-- Question Screen -->
+          <div id="quiz-question-container" class="hidden space-y-6 py-4">
+            <div
+              class="flex items-center justify-between text-xs text-coffee-400"
+            >
+              <span id="quiz-progress-text">Pertanyaan 1 dari 3</span>
+              <div
+                class="w-24 h-1.5 bg-coffee-900 rounded-full overflow-hidden"
+              >
+                <div
+                  id="quiz-progress-bar"
+                  class="w-1/3 h-full bg-sage transition-all duration-300"
+                ></div>
+              </div>
+            </div>
+
+            <h4
+              id="quiz-question-text"
+              class="text-xl font-bold font-serif text-white"
+            >
+              Apa sensasi rasa favorit yang ingin kamu rasakan?
+            </h4>
+
+            <div id="quiz-options-grid" class="grid grid-cols-1 gap-3 pt-2">
+              <!-- Options loaded via JS -->
+            </div>
+          </div>
+
+          <!-- Result Screen -->
+          <div id="quiz-result" class="hidden text-center space-y-6 py-4">
+            <div
+              class="w-16 h-16 bg-green-500/10 text-green-400 rounded-full flex items-center justify-center text-2xl mx-auto"
+            >
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="space-y-1">
+              <span
+                class="text-xs text-sage font-mono tracking-widest uppercase block"
+                >Hasil Rekomendasi Anda</span
+              >
+              <h3
+                id="quiz-result-title"
+                class="text-2xl font-serif font-bold text-white"
+              >
+                Caffè Latte
+              </h3>
+              <p
+                id="quiz-result-desc"
+                class="text-xs text-coffee-300 max-w-sm mx-auto mt-2 leading-relaxed"
+              >
+                Sangat cocok untuk Anda yang menyukai rasa kopi lembut berpadu
+                krim susu segar yang memanjakan tenggorokan.
+              </p>
+            </div>
+
+            <!-- Recommendation Card -->
+            <div
+              id="quiz-recommendation-card"
+              class="glass-panel p-4 rounded-2xl border border-coffee-800 flex items-center justify-between text-left max-w-sm mx-auto"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-sage/10 text-sage rounded-xl flex items-center justify-center text-lg"
+                >
+                  <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <div>
+                  <span
+                    id="quiz-rec-name"
+                    class="block text-sm font-bold text-white"
+                    >Caffè Latte</span
+                  >
+                  <span
+                    id="quiz-rec-price"
+                    class="text-xs text-sage font-mono font-bold"
+                    >Rp 15.000 (Take Away)</span
+                  >
+                </div>
+              </div>
+              <button
+                id="quiz-rec-add-btn"
+                class="px-3.5 py-1.5 rounded-lg bg-sage hover:bg-sage-dark text-white text-xs font-semibold transition-colors"
+              >
+                Pilih Kopi
+              </button>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-2 max-w-xs mx-auto pt-2">
+              <button
+                onclick="resetQuiz()"
+                class="w-full py-2.5 rounded-xl border border-coffee-800 hover:border-coffee-750 text-xs text-coffee-300 hover:text-white"
+              >
+                Ulangi Kuis
+              </button>
+              <button
+                onclick="closeQuiz()"
+                class="w-full py-2.5 rounded-xl bg-coffee-900 hover:bg-coffee-850 text-xs text-white"
+              >
+                Selesai
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Testimonial Sticky Note Modal -->
+    <div
+      id="testimonial-modal"
+      class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden"
+    >
+      <div
+        class="bg-coffee-950 rounded-3xl max-w-md w-full border border-coffee-800 shadow-2xl overflow-hidden relative transform scale-95 opacity-0 transition-all duration-300"
+      >
+        <!-- Modal Header -->
+        <div
+          class="p-6 border-b border-coffee-900 flex items-center justify-between"
+        >
+          <div class="text-left">
+            <span
+              class="text-[10px] text-sage font-mono tracking-widest uppercase block"
+              >Suara Pelanggan</span
+            >
+            <h3 class="text-xl font-bold text-white font-serif mt-1">
+              Tulis Testimoni Anda
+            </h3>
+          </div>
+          <button
+            onclick="closeAddTestimonialModal()"
+            class="p-1 rounded-full hover:bg-coffee-900 text-coffee-400 hover:text-white"
+          >
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <!-- Modal Body Form -->
+        <div class="p-6 space-y-4 text-left">
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-white block"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="testi-name"
+              placeholder="Contoh: Andi Nugroho"
+              class="w-full bg-coffee-900 border border-coffee-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-coffee-500 focus:outline-none focus:border-sage transition-all"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-white block"
+              >Inisial Nama (2 Huruf)</label
+            >
+            <input
+              type="text"
+              id="testi-initial"
+              placeholder="Contoh: AN"
+              maxlength="2"
+              class="w-24 bg-coffee-900 border border-coffee-800 rounded-xl px-4 py-2.5 text-xs text-white text-center font-bold placeholder-coffee-500 focus:outline-none focus:border-sage transition-all"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-white block"
+              >Status / Wilayah Tinggal</label
+            >
+            <input
+              type="text"
+              id="testi-role"
+              placeholder="Contoh: Pecinta Latte - Ampenan"
+              class="w-full bg-coffee-900 border border-coffee-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-coffee-500 focus:outline-none focus:border-sage transition-all"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-white block"
+              >Warna Kertas Sticky Note</label
+            >
+            <div class="grid grid-cols-3 gap-2">
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="note-color"
+                  value="sage"
+                  checked
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2 rounded-lg border border-coffee-800 bg-sage/10 text-xs text-white peer-checked:border-sage peer-checked:bg-sage/30 transition-all font-semibold"
+                >
+                  Sage Green
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="note-color"
+                  value="brown"
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2 rounded-lg border border-coffee-800 bg-coffee-900/50 text-xs text-coffee-300 peer-checked:border-coffee-500 peer-checked:bg-coffee-900 transition-all font-semibold"
+                >
+                  Espresso
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="note-color"
+                  value="cream"
+                  class="sr-only peer"
+                />
+                <span
+                  class="block text-center py-2 rounded-lg border border-coffee-800 bg-coffee-100 text-xs text-coffee-900 peer-checked:border-coffee-400 peer-checked:ring-2 peer-checked:ring-coffee-400 transition-all font-semibold"
+                >
+                  Creamy
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-white block"
+              >Isi Testimoni</label
+            >
+            <textarea
+              id="testi-message"
+              rows="4"
+              placeholder="Tuliskan pengalaman Anda minum kopi di Bestt Coffee..."
+              class="w-full bg-coffee-900 border border-coffee-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-coffee-500 focus:outline-none focus:border-sage transition-all resize-none"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div
+          class="p-6 border-t border-coffee-900 flex justify-end bg-coffee-950/90 space-x-3"
+        >
+          <button
+            onclick="closeAddTestimonialModal()"
+            class="px-4 py-2 rounded-xl border border-coffee-800 text-xs text-coffee-300 hover:text-white transition-colors"
+          >
+            Batal
+          </button>
+          <button
+            onclick="submitTestimonial()"
+            class="px-6 py-2 rounded-xl bg-sage hover:bg-sage-dark text-white font-semibold text-xs transition-colors"
+          >
+            Tempel Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Toast Notification Container -->
+    <div
+      id="toast-container"
+      class="fixed bottom-6 left-6 z-50 pointer-events-none flex flex-col gap-2"
+    ></div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      // Cart State
+      let cart = [];
+      let currentlyCustomizing = null;
+
+      // Menu Data with Take Away & Delivery Prices
+      const coffeeMenu = {
+        Americano: {
+          takeaway: 12000,
+          delivery: 15000,
+          desc: "Espresso murni aromatik yang diencerkan dengan air panas, menyajikan rasa kopi klasik yang bersih.",
+        },
+        "Caffè Latte": {
+          takeaway: 15000,
+          delivery: 18000,
+          desc: "Keseimbangan rasa sempurna antara espresso kental premium dan kelembutan susu segar.",
+        },
+        Cappuccino: {
+          takeaway: 15000,
+          delivery: 18000,
+          desc: "Perpaduan klasik legendaris antara espresso mantap, susu hangat, dan foam tebal nan lembut.",
+        },
+      };
+
+      // Quiz State & Data
+      let quizCurrentStep = 0;
+      let quizAnswers = [];
+      const quizData = [
+        {
+          question: "Apa rasa kopi favorit yang ingin Anda nikmati?",
+          options: [
+            {
+              text: "Rasa kopi kuat, hitam, tanpa campuran susu",
+              value: "strong",
+            },
+            {
+              text: "Sangat lembut dan manis seimbang bersama susu",
+              value: "creamy",
+            },
+            {
+              text: "Rasa klasik dengan busa foam susu tebal",
+              value: "classic",
+            },
+          ],
+        },
+        {
+          question: "Bagaimana Anda ingin menikmati kopi hari ini?",
+          options: [
+            {
+              text: "Membawa pulang langsung (Take Away) - Lebih Hemat!",
+              value: "takeaway",
+            },
+            {
+              text: "Diantarkan langsung ke alamat saya (Delivery)",
+              value: "delivery",
+            },
+          ],
+        },
+        {
+          question: "Kapan Anda paling suka meminum kopi?",
+          options: [
+            {
+              text: "Pagi hari agar bersemangat sepanjang hari",
+              value: "morning",
+            },
+            {
+              text: "Sore hingga malam hari sembari mengobrol santai",
+              value: "evening",
+            },
+          ],
+        },
+      ];
+
+      // Recommendations
+      const recommendations = {
+        strong: {
+          name: "Americano",
+          takeaway: 12000,
+          delivery: 15000,
+          desc: "Americano adalah pilihan yang cocok untuk Anda yang menginginkan cita rasa kopi hitam sejati yang murni, tegas, dan membangkitkan fokus.",
+        },
+        creamy: {
+          name: "Caffè Latte",
+          takeaway: 15000,
+          delivery: 18000,
+          desc: "Caffè Latte sangat direkomendasikan bagi Anda yang mencintai tekstur yang halus, creamy, dengan paduan rasa susu segar yang lembut.",
+        },
+        classic: {
+          name: "Cappuccino",
+          takeaway: 15000,
+          delivery: 18000,
+          desc: "Cappuccino adalah keseimbangan seni kopi tradisional dengan lapisan busa foam susu yang tebal untuk sensasi rasa penuh karakter.",
+        },
+      };
+
+      // PRESET / DEFAULT TESTIMONIALS
+      const defaultTestimonials = [
+        {
+          name: "Andi Nugroho",
+          initial: "AN",
+          role: "Pecinta Latte - Ampenan",
+          message:
+            "Latte di Bestt Coffee rasanya pas banget, espressonya dapet dan susunya gurih. Ditambah lagi bisa pesen oat milk! Selalu pesen take away pas mau berangkat kerja.",
+          color: "sage",
+          rotate: "-rotate-2",
+        },
+        {
+          name: "Siti Patimah",
+          initial: "SP",
+          role: "Pelanggan Setia - Mataram",
+          message:
+            "Rekomendasi Americano-nya juara! Bersih, tegas, nggak ada rasa ampas yang berlebih. Delivery-nya juga cepet banget sampai ke Karang Baru, masih dingin seger.",
+          color: "brown",
+          rotate: "rotate-2",
+        },
+        {
+          name: "Rian Firmansyah",
+          initial: "RF",
+          role: "Mahasiswa - Cakranegara",
+          message:
+            "Sering kumpul sama temen di kedai atau pesen delivery pas lagi nugas. Harganya bersahabat banget buat kantong mahasiswa dengan kualitas rasa kopi se-premium ini!",
+          color: "cream",
+          rotate: "rotate-1",
+        },
+      ];
+
+      window.onload = function () {
+        showToast("Selamat datang di Bestt Coffee Mataram! ☕");
+        initTestimonials();
+      };
+
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("menu-icon");
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          icon.className = "fa-solid fa-xmark text-xl";
+        } else {
+          menu.classList.add("hidden");
+          icon.className = "fa-solid fa-bars text-xl";
+        }
+      }
+
+      // Toast Notification System
+      function showToast(message) {
+        const container = document.getElementById("toast-container");
+        const toast = document.createElement("div");
+        toast.className =
+          "glass-panel px-4 py-3 rounded-xl border border-sage/40 text-xs text-white flex items-center space-x-2 shadow-xl pointer-events-auto transform translate-y-4 opacity-0 transition-all duration-300";
+        toast.innerHTML = `
+                <i class="fa-solid fa-circle-check text-sage text-sm"></i>
+                <span>${message}</span>
+            `;
+        container.appendChild(toast);
+
+        setTimeout(() => {
+          toast.classList.remove("translate-y-4", "opacity-0");
+        }, 50);
+
+        setTimeout(() => {
+          toast.classList.add("opacity-0", "translate-y-2");
+          setTimeout(() => {
+            toast.remove();
+          }, 300);
+        }, 3500);
+      }
+
+      function toggleCartDrawer(isOpen) {
+        const drawer = document.getElementById("cart-drawer");
+        if (isOpen) {
+          drawer.classList.remove("translate-x-full");
+        } else {
+          drawer.classList.add("translate-x-full");
+        }
+      }
+
+      // Open Customize Modal
+      function openCustomizeModal(name, takeawayPrice, deliveryPrice) {
+        currentlyCustomizing = { name, takeawayPrice, deliveryPrice };
+        document.getElementById("customize-title").innerText = name;
+
+        // Re-check defaults
+        document.querySelector(
+          'input[name="order-method"][value="Take Away"]',
+        ).checked = true;
+        document.querySelector(
+          'input[name="serving-temp"][value="Ice"]',
+        ).checked = true;
+        document.querySelector(
+          'input[name="sugar-level"][value="Normal Sweet"]',
+        ).checked = true;
+        document.querySelector(
+          'input[name="milk-type"][value="Fresh Milk"]',
+        ).checked = true;
+
+        updateCustomizeTotal();
+
+        const modal = document.getElementById("customize-modal");
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modal.firstElementChild.classList.remove("scale-95", "opacity-0");
+        }, 50);
+
+        // Bind confirm button logic
+        document.getElementById("add-to-cart-confirm").onclick = function () {
+          const method = document.querySelector(
+            'input[name="order-method"]:checked',
+          ).value;
+          const temp = document.querySelector(
+            'input[name="serving-temp"]:checked',
+          ).value;
+          const sugar = document.querySelector(
+            'input[name="sugar-level"]:checked',
+          ).value;
+          const milk = document.querySelector(
+            'input[name="milk-type"]:checked',
+          ).value;
+
+          let basePrice =
+            method === "Take Away" ? takeawayPrice : deliveryPrice;
+          let extraCost = 0;
+          if (milk === "Oat Milk") extraCost += 5000;
+
+          const finalPrice = basePrice + extraCost;
+
+          addToCart({
+            name: currentlyCustomizing.name,
+            price: finalPrice,
+            custom: `${method}, ${temp}, ${sugar}, ${milk}`,
+            method: method,
+          });
+
+          closeCustomizeModal();
+        };
+      }
+
+      function closeCustomizeModal() {
+        const modal = document.getElementById("customize-modal");
+        modal.firstElementChild.classList.add("scale-95", "opacity-0");
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Dynamically recalculate prices inside modal based on selection (Take Away vs Delivery & Milk)
+      document
+        .querySelectorAll('input[name="order-method"], input[name="milk-type"]')
+        .forEach((radio) => {
+          radio.addEventListener("change", updateCustomizeTotal);
+        });
+
+      function updateCustomizeTotal() {
+        if (!currentlyCustomizing) return;
+        const method = document.querySelector(
+          'input[name="order-method"]:checked',
+        ).value;
+        const milk = document.querySelector(
+          'input[name="milk-type"]:checked',
+        ).value;
+
+        let total =
+          method === "Take Away"
+            ? currentlyCustomizing.takeawayPrice
+            : currentlyCustomizing.deliveryPrice;
+        if (milk === "Oat Milk") {
+          total += 5000;
+        }
+        document.getElementById("customize-total").innerText =
+          "Rp " + total.toLocaleString("id-ID");
+      }
+
+      // Main Cart Logic
+      function addToCart(item) {
+        const existingIndex = cart.findIndex(
+          (c) => c.name === item.name && c.custom === item.custom,
+        );
+        if (existingIndex > -1) {
+          cart[existingIndex].qty += 1;
+        } else {
+          cart.push({
+            name: item.name,
+            price: item.price,
+            custom: item.custom,
+            method: item.method,
+            qty: 1,
+          });
+        }
+
+        updateCartUI();
+        toggleCartDrawer(true);
+        showToast(`${item.name} ditambahkan ke keranjang!`);
+      }
+
+      function changeQuantity(index, delta) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) {
+          cart.splice(index, 1);
+        }
+        updateCartUI();
+      }
+
+      function updateCartUI() {
+        const cartList = document.getElementById("cart-items");
+        const counter = document.getElementById("cart-counter");
+        const emptyState = document.getElementById("cart-empty-state");
+        const footer = document.getElementById("cart-footer");
+        const totalPriceEl = document.getElementById("cart-total-price");
+
+        let totalItems = 0;
+        let subtotal = 0;
+
+        cartList.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartList.appendChild(emptyState);
+          footer.classList.add("hidden");
+          counter.classList.add("scale-0");
+          return;
+        }
+
+        emptyState.remove();
+        footer.classList.remove("hidden");
+        counter.classList.remove("scale-0");
+        counter.classList.add("scale-100");
+
+        cart.forEach((item, index) => {
+          totalItems += item.qty;
+          const itemTotal = item.price * item.qty;
+          subtotal += itemTotal;
+
+          const itemRow = document.createElement("div");
+          itemRow.className =
+            "glass-card p-4 rounded-2xl border border-coffee-800/80 flex items-center justify-between gap-4 animate-fade-in";
+          itemRow.innerHTML = `
+                    <div class="flex-1 space-y-1">
+                        <span class="block text-sm font-bold text-white">${item.name}</span>
+                        <span class="block text-[9px] text-coffee-300 font-mono">${item.custom}</span>
+                        <span class="block text-xs text-sage font-mono font-bold">Rp ${item.price.toLocaleString("id-ID")}</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <div class="flex items-center space-x-2 bg-coffee-900 border border-coffee-800 rounded-lg p-1">
+                            <button onclick="changeQuantity(${index}, -1)" class="w-6 h-6 hover:bg-coffee-800 text-coffee-300 hover:text-white rounded flex items-center justify-center text-xs transition-colors">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <span class="text-xs font-mono font-semibold text-white w-4 text-center">${item.qty}</span>
+                            <button onclick="changeQuantity(${index}, 1)" class="w-6 h-6 hover:bg-coffee-800 text-coffee-300 hover:text-white rounded flex items-center justify-center text-xs transition-colors">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-white">Rp ${itemTotal.toLocaleString("id-ID")}</span>
+                    </div>
+                `;
+          cartList.appendChild(itemRow);
+        });
+
+        counter.innerText = totalItems;
+        totalPriceEl.innerText = "Rp " + subtotal.toLocaleString("id-ID");
+      }
+
+      // WhatsApp Checkout Direct Invoice Redirect
+      function triggerCheckout() {
+        if (cart.length === 0) return;
+
+        const invoiceNumber =
+          "BC-" + Math.floor(100000 + Math.random() * 900000);
+        const dateStr = new Date().toLocaleDateString("id-ID", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+        let message = "*INVOICE PEMESANAN - BESTT COFFEE* ☕\n";
+        message += "===================================\n";
+        message += `*No. Invoice :* #${invoiceNumber}\n`;
+        message += `*Tanggal      :* ${dateStr}\n`;
+        message += "===================================\n\n";
+
+        let grandTotal = 0;
+        let deliveryRequired = false;
+
+        cart.forEach((item, index) => {
+          const total = item.price * item.qty;
+          grandTotal += total;
+          if (item.method === "Delivery") {
+            deliveryRequired = true;
+          }
+          message += `*${index + 1}. ${item.name}* (${item.qty}x)\n`;
+          message += `   _Varian : ${item.custom}_\n`;
+          message += `   _Subtotal:_ Rp ${total.toLocaleString("id-ID")}\n\n`;
+        });
+
+        message += "===================================\n";
+        message += `*Total Pembayaran :* Rp ${grandTotal.toLocaleString("id-ID")}\n\n`;
+
+        if (deliveryRequired) {
+          message += `*INFO PENGIRIMAN (DELIVERY) :*\n`;
+          message += `_Silakan isi alamat pengantaran Anda di bawah ini:_\n`;
+          message += `Nama Penerima : \n`;
+          message += `Alamat Lengkap: \n\n`;
+        } else {
+          message += `*INFO PENGAMBILAN (TAKE AWAY) :*\n`;
+          message += `_Pesanan akan diambil langsung ke Kedai Bestt Coffee._\n\n`;
+        }
+
+        message += `*Alamat Kedai Utama Bestt Coffee:*\n`;
+        message += `Jl. Gili Trawangan 2 No. 23, Taman Karang Baru, Mataram, NTB\n`;
+        message += `===================================\n`;
+        message += `_Terima kasih telah memesan di Bestt Coffee! Mohon tunggu konfirmasi admin kami._`;
+
+        const encodedText = encodeURIComponent(message);
+        const waNumber = "6287865648996";
+        const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
+
+        window.open(waUrl, "_blank");
+      }
+
+      // COFFEE FINDER QUIZ LOGIC
+      function openQuiz() {
+        const modal = document.getElementById("quiz-modal");
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modal.firstElementChild.classList.remove("scale-95", "opacity-0");
+        }, 50);
+        resetQuiz();
+      }
+
+      function closeQuiz() {
+        const modal = document.getElementById("quiz-modal");
+        modal.firstElementChild.classList.add("scale-95", "opacity-0");
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      function startQuiz() {
+        document.getElementById("quiz-welcome").classList.add("hidden");
+        document
+          .getElementById("quiz-question-container")
+          .classList.remove("hidden");
+        quizCurrentStep = 0;
+        quizAnswers = [];
+        loadQuizQuestion();
+      }
+
+      function loadQuizQuestion() {
+        const currentData = quizData[quizCurrentStep];
+
+        document.getElementById("quiz-progress-text").innerText =
+          `Pertanyaan ${quizCurrentStep + 1} dari ${quizData.length}`;
+        const pct = ((quizCurrentStep + 1) / quizData.length) * 100;
+        document.getElementById("quiz-progress-bar").style.width = `${pct}%`;
+
+        document.getElementById("quiz-question-text").innerText =
+          currentData.question;
+
+        const optionsGrid = document.getElementById("quiz-options-grid");
+        optionsGrid.innerHTML = "";
+
+        currentData.options.forEach((opt) => {
+          const button = document.createElement("button");
+          button.className =
+            "w-full text-left p-4 rounded-2xl border border-coffee-800 bg-coffee-900/40 text-xs text-coffee-300 hover:border-sage hover:bg-sage/10 hover:text-white transition-all duration-200 flex items-center justify-between";
+          button.innerHTML = `
+                    <span>${opt.text}</span>
+                    <i class="fa-solid fa-chevron-right text-[10px] text-coffee-600"></i>
+                `;
+          button.onclick = () => selectQuizOption(opt.value);
+          optionsGrid.appendChild(button);
+        });
+      }
+
+      function selectQuizOption(value) {
+        quizAnswers.push(value);
+        quizCurrentStep++;
+
+        if (quizCurrentStep < quizData.length) {
+          loadQuizQuestion();
+        } else {
+          calculateQuizResult();
+        }
+      }
+
+      function calculateQuizResult() {
+        document
+          .getElementById("quiz-question-container")
+          .classList.add("hidden");
+
+        const flavor = quizAnswers[0] || "creamy";
+        const method = quizAnswers[1] || "takeaway";
+
+        const recommendationKey =
+          flavor === "strong"
+            ? "strong"
+            : flavor === "classic"
+              ? "classic"
+              : "creamy";
+        const recommendedProduct = recommendations[recommendationKey];
+
+        const name = recommendedProduct.name;
+        const price =
+          method === "takeaway"
+            ? recommendedProduct.takeaway
+            : recommendedProduct.delivery;
+        const labelMethod = method === "takeaway" ? "Take Away" : "Delivery";
+
+        document.getElementById("quiz-result-title").innerText = name;
+        document.getElementById("quiz-result-desc").innerText =
+          recommendedProduct.desc;
+        document.getElementById("quiz-rec-name").innerText = name;
+        document.getElementById("quiz-rec-price").innerText =
+          "Rp " + price.toLocaleString("id-ID") + ` (${labelMethod})`;
+
+        document.getElementById("quiz-rec-add-btn").onclick = () => {
+          openCustomizeModal(
+            name,
+            coffeeMenu[name].takeaway,
+            coffeeMenu[name].delivery,
+          );
+          closeQuiz();
+        };
+
+        document.getElementById("quiz-result").classList.remove("hidden");
+      }
+
+      function resetQuiz() {
+        document.getElementById("quiz-result").classList.add("hidden");
+        document
+          .getElementById("quiz-question-container")
+          .classList.add("hidden");
+        document.getElementById("quiz-welcome").classList.remove("hidden");
+        quizCurrentStep = 0;
+        quizAnswers = [];
+      }
+
+      // TESTIMONIALS STICKY NOTES LOGIC
+      function initTestimonials() {
+        let testimonials = JSON.parse(
+          localStorage.getItem("bestt_testimonials"),
+        );
+        if (!testimonials) {
+          testimonials = defaultTestimonials;
+          localStorage.setItem(
+            "bestt_testimonials",
+            JSON.stringify(testimonials),
+          );
+        }
+        renderTestimonials();
+      }
+
+      function renderTestimonials() {
+        const grid = document.getElementById("sticky-notes-grid");
+        if (!grid) return;
+        grid.innerHTML = "";
+
+        const testimonials =
+          JSON.parse(localStorage.getItem("bestt_testimonials")) ||
+          defaultTestimonials;
+
+        testimonials.forEach((item) => {
+          const note = document.createElement("div");
+
+          // Set the styling class based on the selected note color
+          let colorClass = "";
+          let textColorClass = "text-coffee-300";
+          let nameColorClass = "text-white";
+          let badgeColorClass = "bg-coffee-800 text-sage";
+
+          if (item.color === "sage") {
+            colorClass = "bg-sage/15 border border-sage/30";
+          } else if (item.color === "brown") {
+            colorClass = "bg-coffee-900/60 border border-coffee-800";
+          } else if (item.color === "cream") {
+            colorClass =
+              "bg-coffee-100 text-coffee-950 border border-coffee-200";
+            textColorClass = "text-coffee-800 font-medium";
+            nameColorClass = "text-coffee-950 font-bold";
+            badgeColorClass = "bg-coffee-200 text-coffee-800";
+          }
+
+          // Random tilt rotation logic if not specified
+          const rotateClass = item.rotate || getRandomRotation();
+
+          note.className = `relative p-8 rounded-2xl shadow-xl flex flex-col justify-between transition-all duration-300 hover:scale-105 hover:z-20 ${colorClass} ${rotateClass}`;
+
+          // Custom design elements including tape and quotation icon
+          note.innerHTML = `
+                    <!-- Sticky Tape Visual Representation -->
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 w-20 h-6 sticky-tape -rotate-2"></div>
+                    
+                    <div class="space-y-4">
+                        <div class="text-left">
+                            <i class="fa-solid fa-quote-left text-sage/40 text-2xl"></i>
+                        </div>
+                        <p class="text-xs leading-relaxed italic ${textColorClass}">"${item.message}"</p>
+                    </div>
+
+                    <div class="flex items-center space-x-3 pt-6 mt-4 border-t border-coffee-800/40">
+                        <div class="w-9 h-9 rounded-full ${badgeColorClass} flex items-center justify-center font-bold text-xs tracking-wider shrink-0">
+                            ${item.initial}
+                        </div>
+                        <div class="text-left overflow-hidden">
+                            <span class="block text-xs font-bold leading-tight ${nameColorClass} truncate">${item.name}</span>
+                            <span class="text-[10px] text-coffee-400 block truncate">${item.role}</span>
+                        </div>
+                    </div>
+                `;
+
+          grid.appendChild(note);
+        });
+      }
+
+      function getRandomRotation() {
+        const rotations = [
+          "-rotate-1",
+          "rotate-1",
+          "-rotate-2",
+          "rotate-2",
+          "rotate-0",
+        ];
+        return rotations[Math.floor(Math.random() * rotations.length)];
+      }
+
+      function openAddTestimonialModal() {
+        const modal = document.getElementById("testimonial-modal");
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modal.firstElementChild.classList.remove("scale-95", "opacity-0");
+        }, 50);
+
+        // Clean inputs
+        document.getElementById("testi-name").value = "";
+        document.getElementById("testi-initial").value = "";
+        document.getElementById("testi-role").value = "";
+        document.getElementById("testi-message").value = "";
+        document.querySelector(
+          'input[name="note-color"][value="sage"]',
+        ).checked = true;
+      }
+
+      function closeAddTestimonialModal() {
+        const modal = document.getElementById("testimonial-modal");
+        modal.firstElementChild.classList.add("scale-95", "opacity-0");
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      function submitTestimonial() {
+        const name = document.getElementById("testi-name").value.trim();
+        const initial = document
+          .getElementById("testi-initial")
+          .value.trim()
+          .toUpperCase();
+        const role = document.getElementById("testi-role").value.trim();
+        const message = document.getElementById("testi-message").value.trim();
+        const color = document.querySelector(
+          'input[name="note-color"]:checked',
+        ).value;
+
+        // Form Validation via custom Toast notification
+        if (!name || !initial || !role || !message) {
+          showToast(
+            "Maaf, mohon lengkapi semua baris formulir terlebih dahulu! 🙏",
+          );
+          return;
+        }
+
+        if (initial.length < 1 || initial.length > 2) {
+          showToast("Inisial harus terdiri dari 1 atau 2 huruf saja.");
+          return;
+        }
+
+        const newTestimonial = {
+          name: name,
+          initial: initial,
+          role: role,
+          message: message,
+          color: color,
+          rotate: getRandomRotation(),
+        };
+
+        let testimonials =
+          JSON.parse(localStorage.getItem("bestt_testimonials")) ||
+          defaultTestimonials;
+        testimonials.push(newTestimonial);
+        localStorage.setItem(
+          "bestt_testimonials",
+          JSON.stringify(testimonials),
+        );
+
+        renderTestimonials();
+        closeAddTestimonialModal();
+        showToast("Sukses! Testimoni Anda telah tertempel indah di papan. 📌");
+
+        // Smoothly view the updated section
+        setTimeout(() => {
+          scrollToSection("testimonials");
+        }, 400);
+      }
+    </script>
+  </body>
+</html>
